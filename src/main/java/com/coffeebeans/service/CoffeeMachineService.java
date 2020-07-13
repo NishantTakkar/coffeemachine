@@ -119,49 +119,4 @@ public class CoffeeMachineService {
     }
 
 
-
-
-    /*public void makeBeverage(BeverageType beverageType) throws InterruptedException {
-        outletService.lockOutlet();
-
-        Map<String, Integer> ingredientToQuantityMap = beverage.getIngredientToQuantityMap();
-        synchronized (checkRequiredQuantityAndReserveLock) {
-
-            System.out.println(Thread.currentThread().getName() + ": Checking the ingredients quantity");
-
-            for (String ingredientName : ingredientToQuantityMap.keySet()) {
-                if (inventoryService.getAvailableQuantity(ingredientName) < ingredientToQuantityMap.get(ingredientName)) {
-                    throw new NotAllowedException("Required ingredient qty is not available");
-                }
-            }
-
-            System.out.println(Thread.currentThread().getName() + ": Finished checking the ingredients quantity");
-
-            *//**
-             * reaching to this step means, required qty is available
-             * now, reserve the qty for making the coffee
-             *//*
-            for (String ingredientName : ingredientToQuantityMap.keySet()) {
-                inventoryService.reserve(ingredientName, ingredientToQuantityMap.get(ingredientName));
-            }
-
-            System.out.println(Thread.currentThread().getName() + ": Reserved the ingredients quantity");
-        }
-
-        *//**
-         * as preparing the coffee is time taking process, it can be done separately without taking the lock
-         * as it has already reserved the qty
-         * Generated random multiplier to have separate preparation time for each beverage
-         *//*
-        System.out.println(Thread.currentThread().getName() + ": Preparing the beverage");
-        for (String ingredientName : ingredientToQuantityMap.keySet()) {
-            Thread.sleep(100 * random.nextInt(10));
-            inventoryService.deduct(ingredientName, ingredientToQuantityMap.get(ingredientName));
-        }
-
-        outletService.UnlockOutlet();
-        System.out.println(Thread.currentThread().getName() + ": Beverage is served successfully!!!");
-    }*/
-
-
 }
