@@ -69,7 +69,7 @@ public class CoffeeMachineService {
         new Thread(() -> {
             while (true){
                 try {
-                    System.out.println(makeBererage(beverageBlockingQueue.take()));
+                    System.out.println(makeBeverage(beverageBlockingQueue.take()));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -80,7 +80,7 @@ public class CoffeeMachineService {
 
 
 
-    public String makeBererage(BeverageType beverageType) {
+    public String makeBeverage(BeverageType beverageType) {
 
         Beverage beverage = beverageConfigService.getBeverageConfig(beverageType);
 
